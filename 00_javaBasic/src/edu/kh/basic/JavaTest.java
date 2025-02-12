@@ -1,5 +1,6 @@
 package edu.kh.basic;
 
+// git test 집에서 코드 변경해보기
 // 한 줄 주석 : 컴파일러가 해석하지 않는 부분
 
 /* 범위 주석
