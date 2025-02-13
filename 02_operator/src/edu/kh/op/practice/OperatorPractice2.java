@@ -36,6 +36,17 @@ public class OperatorPractice2 {
 		
 		System.out.println("청소년입니까? " + ((age >= 13) && (age <= 19)));
 		System.out.println("노인이거나 어린이 입니까? " + ((age >= 65) && (age <= 12)));
+		
+		// 선생님 방법 -> 변수 만들어서 사용~
+//		String result1 = age >= 20 ? "성인" : "미성년";
+//		System.out.println("저는 " + result1 + "입니다.");
+		
+//		boolean isTeenager = (age >= 13) && (age <= 19);
+//		boolean isSeniorOrChild = (age >= 65) && (age <= 12);
+//		System.out.println("청소년입니까? " + isTeenager);
+//		System.out.println("노인이거나 어린이 입니까? " + isSeniorOrChild);
+		
+
 	}
 		
 	

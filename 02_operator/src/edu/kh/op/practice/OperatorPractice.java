@@ -111,6 +111,12 @@ public class OperatorPractice {
 		System.out.printf("합계 : %d\n", sum);
 		System.out.printf("평균 : %.1f", average);
 		
+		// 각 과목이 40점 이상, 평균 60점이상이어야 합격
+		// 그 외에 불합격 출력
+		boolean result = (input1 >= 40 && input2 >= 40 && input3 >= 40 && average>=60);
+		
+		System.out.println(result ? "합격" : "불합격");
+		
 		
 		
 		

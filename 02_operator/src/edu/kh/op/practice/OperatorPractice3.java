@@ -42,7 +42,8 @@ public class OperatorPractice3 {
 				
 		System.out.printf("할인을 포함한 최종 금액 : %.1f", dc_price);
 		
-		
+//		double discount = membership ? price * 0.10 : price *0.05;
+//		double finalPrice = price - discount;
 
 	}
 	
@@ -73,9 +74,25 @@ public class OperatorPractice3 {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("출금할 금액 입력 : ");
-		int money = sc.nextInt();
+		int amount = sc.nextInt();
 		
-		System.out.printf("50000원: %d\n 10000원: %d\n 5000원 : %d\n 1000원: %d\n", money/50000, money%50000/10000, money%50000%10000/5000, money%50000%10000%5000/1000  );
+		int fiftyTh = amount / 50000; // 5만원짜리 지폐 갯수
+		//amount = amount % 50000; // 5만원짜리 지폐 거르고 난 뒤 나머지 금액
+		// 나머지 값을 amount 변수에 재대입해야 아래 다음 지폐에서 재사용 할 수 있음.
+		amount %= 50000; // 복합 대입 연산자 (%와 = 을 합쳐서 사용해도 동일함)
+		
+		int tenTh = amount / 10000; //1만원짜리 지폐 갯수
+		amount %= 10000;
+		
+		int fiveTh = amount / 5000; // 5천원짜리 지폐 갯수
+		amount %= 5000;
+		
+		int oneTh = amount / 1000; // 1천원짜리 지폐 갯수
+		amount %= 1000;
+		
+		System.out.printf("50000원: %d\n10000원: %d\n5000원 : %d\n1000원: %d\n", fiftyTh, tenTh, fiveTh, oneTh );
+		
+		//System.out.printf("50000원: %d\n 10000원: %d\n 5000원 : %d\n 1000원: %d\n", money/50000, money%50000/10000, money%50000%10000/5000, money%50000%10000%5000/1000  );
 		
 
 		

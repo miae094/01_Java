@@ -9,7 +9,7 @@ public class PracticeRun {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		//OperatorPractice op = new OperatorPractice();
+		OperatorPractice op = new OperatorPractice();
 		//op.practice3();
 
 		OperatorPractice3 op3 = new OperatorPractice3();
