@@ -147,53 +147,39 @@ public class ConditionPractice {
 //70점 이상일 경우 Pass, 70점 미만이거나 전체 강의에 30% 이상 결석 시 Fail을 출력하세요.
 		
 		System.out.print("중간고사 : ");
-		int exam1 = sc.nextInt();
+		double exam1 = sc.nextDouble();
 		
 		System.out.print("기말고사 : ");
-		int exam2 = sc.nextInt();
+		double exam2 = sc.nextDouble();
 		
 		System.out.print("과제점수 : ");
-		int assignment = sc.nextInt();
+		double assignment = sc.nextDouble();
 		
 		System.out.print("출석횟수 : ");
-		int attendance = sc.nextInt();
+		double attendance = sc.nextDouble();
 		
-
-		double m_exam = exam1 * 0.2;
+		exam1 *= 0.2;
+		exam2 *= 0.3;
+		assignment *= 0.3;
 		
-		double f_exam = exam2 * 0.3;
+		System.out.println("================= 결과 =================");
 		
-		double assign = assignment * 0.3;
-		
-		double attendance2 = attendance;
-		
-		//결석률
-		attendance2 = (20-attendance2)/20*100;
-		
-		//attendance2 = attendance2 /20 * 20;
-		System.out.println("attendance2 : " + attendance2);
-		
-		double sum = m_exam + f_exam + assign + attendance;
-		
-		String result = "";
-				
-		if(attendance2 >=30) {
-			System.out.println("Fail [출석 횟수 부족 (" + attendance + "/20)]");
+		if(attendance <= 20*0.7) {
+			System.out.println("Fail [출석 횟수 부족 (" + (int)attendance + "/20)]");
+			
 		} else {
-			if(sum>=70) {
-				result = "PASS";
-			} else {
-				result = "FALE [점수 미달]";
-			}
+			System.out.printf("중간 고사 점수(20) : %.1f \n" , exam1);
+			System.out.printf("기말 고사 점수(30) : %.1f \n" , exam2);
+			System.out.printf("과제 점수 (30) : %.1f \n" , assignment);
+			System.out.printf("출석 점수 (20) : %.1f \n", attendance);
 			
-			System.out.println("================= 결과 =================");
-			System.out.println("중간 고사 점수(20) : " + m_exam);
-			System.out.println("기말 고사 점수(30) : " + f_exam);
-			System.out.println("과제 점수 (30) : " + assign);
-			System.out.println("출석 점수 (20) : "+ attendance);
+			double sum = exam1 + exam2 + assignment + attendance;
 			
-			System.out.println("총점 : " + sum);
-			System.out.println(result);
+			System.out.printf("총점 : %.1f \n",sum);
+			
+			if(sum >= 70) {
+				System.out.println("PASS");
+			} else System.out.println("Fail [점수 미달]");
 		}
 		
 		
